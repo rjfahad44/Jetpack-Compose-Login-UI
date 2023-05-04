@@ -15,10 +15,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -32,10 +29,10 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.ft.ltd.jetpack_compose_login_ui.ui.theme.JetpackComposeLoginUITheme
+import com.ft.ltd.jetpack_compose_login_ui.ui.theme.Shapes
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.navigationBarsWithImePadding
 import com.google.android.exoplayer2.ExoPlayer
@@ -49,7 +46,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetpackComposeLoginUITheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -61,7 +57,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun getVideoUri(): Uri {
-        val rawId = resources.getIdentifier("clouds", "raw", packageName)
+        val rawId = resources.getIdentifier("app_src_main_res_raw_clouds", "raw", packageName)
         val videoUri = "android.resource://$packageName/$rawId"
         return Uri.parse(videoUri)
     }
