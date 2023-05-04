@@ -3,6 +3,8 @@ package com.ft.ltd.jetpack_compose_login_ui
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -36,6 +38,11 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.ft.ltd.jetpack_compose_login_ui.ui.theme.JetpackComposeLoginUITheme
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.navigationBarsWithImePadding
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.Player
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout.RESIZE_MODE_ZOOM
+import com.google.android.exoplayer2.ui.StyledPlayerView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
